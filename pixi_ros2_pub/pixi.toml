@@ -9,6 +9,9 @@ version = "0.1.0"
 scripts = ["install/setup.sh"]
 
 [tasks]
+router = "bash scripts/set_zenoh_router.sh"
+stop-router = "pkill -f rmw_zenohd || true"
+pub = "bash scripts/set_zenoh_config.sh && ros2 run py_pub talker"
 
 [dependencies]
 colcon-common-extensions = ">=0.3.0,<0.4"
