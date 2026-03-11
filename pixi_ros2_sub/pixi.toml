@@ -1,0 +1,17 @@
+[workspace]
+authors = ["Xingxin HE <xingxin.he@connect.ust.hk>"]
+channels = ["robostack-humble", "conda-forge"]
+name = "pixi_ros2_sub"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[activation]
+scripts = ["install/setup.sh"]
+
+[tasks]
+
+[dependencies]
+colcon-common-extensions = ">=0.3.0,<0.4"
+setuptools = "<=58.2.0"
+ros-humble-desktop = ">=0.10.0,<0.11"
+ros-humble-rmw-zenoh-cpp = ">=0.1.2,<0.2"
