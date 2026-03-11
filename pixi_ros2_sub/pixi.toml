@@ -6,9 +6,10 @@ platforms = ["linux-64"]
 version = "0.1.0"
 
 [activation]
-scripts = ["install/setup.sh"]
+scripts = ["scripts/set_env.sh", "install/setup.sh"]
 
 [tasks]
+sub = "ros2 run py_sub listener"
 
 [dependencies]
 colcon-common-extensions = ">=0.3.0,<0.4"
