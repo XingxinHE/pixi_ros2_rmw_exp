@@ -10,7 +10,8 @@ version = "0.1.0"
 [activation.env]
 ROS_DOMAIN_ID="110"
 RMW_IMPLEMENTATION="rmw_cyclonedds_cpp"
-
+CYCLONEDDS_URI="file://${PIXI_PROJECT_ROOT}/cyclonedds.xml"
+ROS_NETWORK_INTERFACE="enxc8a362d29cec"
 [tasks]
 sub = "ros2 run demo_nodes_cpp listener"
 
