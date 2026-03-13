@@ -6,7 +6,7 @@ platforms = ["linux-64"]
 version = "0.1.0"
 
 [activation]
-scripts = ["scripts/set_env.sh", "install/setup.sh"]
+scripts = ["install/setup.sh"]
 
 [activation.env]
 ROS_DOMAIN_ID="110"
@@ -14,11 +14,8 @@ RMW_IMPLEMENTATION="rmw_zenoh_cpp"
 ZENOH_SESSION_CONFIG_URI="./config/zenoh_client.json5"
 
 [tasks]
-build = {cmd = "colcon build --symlink-install", inputs = ["src"]}
-sub = "ros2 run py_sub listener"
+sub = "ros2 run demo_nodes_cpp listener"
 
 [dependencies]
-colcon-common-extensions = ">=0.3.0,<0.4"
-setuptools = "<=58.2.0"
 ros-humble-desktop = ">=0.10.0,<0.11"
 ros-humble-rmw-zenoh-cpp = ">=0.1.2,<0.2"

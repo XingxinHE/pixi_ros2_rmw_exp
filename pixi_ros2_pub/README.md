@@ -1,6 +1,5 @@
 ```shell
 pixi install --frozen
-pixi run colcon build
 ```
 
 

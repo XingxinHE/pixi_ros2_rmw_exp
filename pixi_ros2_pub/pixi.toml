@@ -14,14 +14,11 @@ RMW_IMPLEMENTATION="rmw_zenoh_cpp"
 ZENOH_ROUTER_CHECK_ATTEMPTS="5"
 
 [tasks]
-build = {cmd = "colcon build --symlink-install", inputs = ["src"]}
 router = "bash scripts/start_zenoh_router.sh"
 stop-router = "pkill -f rmw_zenohd || true"
-pub = "ros2 run py_pub talker"
+pub = "ros2 run demo_nodes_cpp talker"
 doctor = "ros2 doctor -r | grep rmw_zenoh_cpp"
 
 [dependencies]
-colcon-common-extensions = ">=0.3.0,<0.4"
-setuptools = "<=58.2.0"
 ros-humble-desktop = ">=0.10.0,<0.11"
 ros-humble-rmw-zenoh-cpp = ">=0.1.2,<0.2"
