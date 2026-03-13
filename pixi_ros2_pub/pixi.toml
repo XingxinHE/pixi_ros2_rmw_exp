@@ -6,12 +6,19 @@ platforms = ["linux-64"]
 version = "0.1.0"
 
 [activation]
-scripts = ["scripts/set_zenoh_config.sh", "install/setup.sh"]
+scripts = ["install/setup.sh"]
+
+[activation.env]
+ROS_DOMAIN_ID="110"
+RMW_IMPLEMENTATION="rmw_zenoh_cpp"
+ZENOH_ROUTER_CHECK_ATTEMPTS="5"
 
 [tasks]
-router = "bash scripts/set_zenoh_router.sh"
+build = {cmd = "colcon build --symlink-install", inputs = ["src"]}
+router = "bash scripts/start_zenoh_router.sh"
 stop-router = "pkill -f rmw_zenohd || true"
 pub = "ros2 run py_pub talker"
+doctor = "ros2 doctor -r | grep rmw_zenoh_cpp"
 
 [dependencies]
 colcon-common-extensions = ">=0.3.0,<0.4"
