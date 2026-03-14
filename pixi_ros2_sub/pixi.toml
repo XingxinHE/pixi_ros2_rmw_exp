@@ -2,7 +2,7 @@
 authors = ["Xingxin HE <xingxin.he@connect.ust.hk>"]
 channels = ["robostack-humble", "conda-forge"]
 name = "pixi_ros2_sub"
-platforms = ["linux-64"]
+platforms = ["linux-64", "osx-arm64"]
 version = "0.1.0"
 
 [activation]
